@@ -5,8 +5,9 @@ pipeline {
         stage('Setting the server up') {
             steps {
                 sh "ls"
-                sh "docker compose down"
-                sh "docker compose up"
+                sh "update-nginxDefaultConfig.sh"
+                //sh "docker compose down"
+                //sh "docker compose up"
             }
         }
     }
