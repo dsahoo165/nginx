@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Setting the server up') {
             steps {
                 sh "ls"
                 sh "docker compose down"
