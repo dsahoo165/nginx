@@ -10,7 +10,7 @@ pipeline {
                 }
                 sh 'pwd'
                 sh "ls"
-                sstash name: 'build-artifacts', includes: '**/*', excludes: 'workspace/**'
+                stash name: 'build-artifacts', includes: '**/*', excludes: 'workspace/**'
                 echo 'outside the dir'
                 dir("workspace"){
                  sh 'ls'
