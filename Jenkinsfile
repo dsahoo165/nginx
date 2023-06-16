@@ -10,13 +10,7 @@ pipeline {
                 }
                 sh 'pwd'
                 sh "ls"
-                stash name: 'build-artifacts', includes: '**/*', excludes: 'workspace/**'
-                echo 'outside the dir'
-                dir("workspace"){
-                 sh 'ls'
-                    sh 'pwd'
-                 
-                }
+                stash name: 'build-artifacts', includes: '**/*', excludes: 'workspace**'                
             }
         }
         stage('Setting the server up') {
