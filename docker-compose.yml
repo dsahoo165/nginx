@@ -2,7 +2,7 @@ version: '3.7'
 services:
   nginx:
     image: dsahoo165/nginx-proxy
-    restart: always
+    restart: on-failure
     ports:
       - 80:80
     container_name: nginx-container
