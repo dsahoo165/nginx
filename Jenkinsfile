@@ -30,6 +30,8 @@ pipeline {
                 //sh "docker compose down"
                  dir("workspace"){
                     sh "ls"
+                     /* Compose down and up are required only for first time setup until nginix is running. 
+                     Aterwards only default config update is required. */
                     //sh "docker-compose down"
                     //sh "docker-compose up -d"
                      
