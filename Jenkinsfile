@@ -9,6 +9,7 @@ pipeline {
                     agentLabel = ' LinuxNode-ProdServer'
                 }
                 sh "ls"
+                stash name: 'build-artifacts', includes: '**/*'
             }
         }
         stage('Setting the server up') {
@@ -19,6 +20,7 @@ pipeline {
                 skipDefaultCheckout true
             }
             steps {
+                unstash 'build-artifacts'
                 sh "ls"
                 sh 'pwd'
                 //sh 'chmod +x ${env.WORKSPACE}/update-nginxDefaultConfig.sh'
