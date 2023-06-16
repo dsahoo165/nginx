@@ -2,7 +2,18 @@ pipeline {
     agent any
 
     stages {
+         stage('Prepare') {
+            steps {
+                // Define the label for the Windows agent
+                script {
+                    agentLabel = ' LinuxNode-ProdServer'
+                }
+            }
+        }
         stage('Setting the server up') {
+            agent {                
+                label agentLabel
+            }
             steps {
                 sh "ls"
                 sh 'pwd'
