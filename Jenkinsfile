@@ -8,8 +8,14 @@ pipeline {
                 script {
                     agentLabel = ' LinuxNode-ProdServer'
                 }
+                sh 'pwd'
                 sh "ls"
-                stash name: 'build-artifacts', includes: '.'
+                echo 'outside the dir'
+                dir("workspace"){
+                 sh 'ls'
+                    sh 'pwd'
+                 stash name: 'build-artifacts', includes: '.'
+                }
             }
         }
         stage('Setting the server up') {
