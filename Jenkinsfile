@@ -14,6 +14,9 @@ pipeline {
             agent {                
                 label agentLabel
             }
+            options {
+                skipDefaultCheckout true
+            }
             steps {
                 sh "ls"
                 sh 'pwd'
