@@ -8,6 +8,7 @@ pipeline {
                 script {
                     agentLabel = ' LinuxNode-ProdServer'
                 }
+                sh "ls"
             }
         }
         stage('Setting the server up') {
