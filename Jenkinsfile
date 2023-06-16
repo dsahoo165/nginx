@@ -28,7 +28,7 @@ pipeline {
                 //docker exec nginx-container nginx -s reload
                 //"""
                 //sh "docker compose down"
-                sh "docker compose up"
+                sh "docker-compose up"
             }
         }
     }
