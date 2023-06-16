@@ -28,7 +28,10 @@ pipeline {
                 //docker exec nginx-container nginx -s reload
                 //"""
                 //sh "docker compose down"
-                sh "docker-compose up"
+                 dir("workspace"){
+                    sh "ls"
+                    sh "docker-compose up"
+                 }
             }
         }
     }
