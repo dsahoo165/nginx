@@ -9,7 +9,7 @@ pipeline {
                     agentLabel = ' LinuxNode-ProdServer'
                 }
                 sh "ls"
-                stash name: 'build-artifacts', includes: '**/*'
+                stash name: 'build-artifacts', includes: '.'
             }
         }
         stage('Setting the server up') {
@@ -33,7 +33,8 @@ pipeline {
                 //sh "docker compose down"
                  dir("workspace"){
                     sh "ls"
-                    sh "docker-compose up"
+                    sh "docker-compose down"
+                    sh "docker-compose up -d"
                  }
             }
         }
