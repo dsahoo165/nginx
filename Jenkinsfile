@@ -8,7 +8,7 @@ pipeline {
                 //sh 'chmod +x ${env.WORKSPACE}/update-nginxDefaultConfig.sh'
                 //sh "${env.WORKSPACE}/update-nginxDefaultConfig.sh"
                 
-                //sh "docker compose down"
+                sh "docker compose down"
                 sh "docker compose up -d"
             }
         }
